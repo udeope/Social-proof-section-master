@@ -1,1 +1,1 @@
-# Challenge Social-proof-section-master from Frontend Mentor
+Challenge Social-proof-section-master from Frontend Mentor
