@@ -5,13 +5,48 @@
     --mid-magenta: hsl(303, 10%, 53%);
 }
 
+html::before,
+html::after{
+    position: fixed;
+}
+
+html::before{
+    content: url('/images/bg-pattern-top-mobile.svg');
+}
+
+html::after{
+    content: url('/images/bg-pattern-bottom-mobile.svg');
+}
+
+
 body{
     font-family: 'Spartan', sans-serif;
 }
 
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        justify-items: end;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 800px);
+    }
+}
+
 header{
     text-align: center;
-    padding: 90px 10px 30px;
+    padding: 70px 10px 30px;
+}
+
+@media (min-width: 768px) {
+    header{
+        text-align: left;
+    font-size: 1.4rem;
+    font-weight: 700;
+    grid-column: 1/2;
+    }
 }
 
 .header__title{
@@ -29,11 +64,37 @@ header{
     text-align: center;
 }
 
+@media (min-width: 768px) {
+    .rates{
+        margin-bottom: 0;
+        margin-top: 60px;
+        grid-column: 3 / 4;
+    }
+}
+
 .rated{
     background-color: var(--soft-magenta);
     padding: 10px 40px;
     margin: 15px 5px;
     border-radius: 10px;
+}
+
+@media (min-width: 768px){
+    .rated {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 500px;
+        position: relative;
+    }
+
+    .rated:first-child {
+        left: -150px;
+    }
+
+    .rated:nth-child(2) {
+        left: -75px;
+    }
 }
 
 .rated__text{
@@ -53,10 +114,29 @@ header{
     margin-top: 50px;
 }
 
+@media (min-width: 768px) {
+    .testimonials {
+        width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    grid-column: 1 / 4;
+    grid-row: 2;
+    }
+}
+
 .testimonial{
     background-color: var(--dark-magenta);
     border-radius: 8px;
 }
+
+@media screen and (min-width: 768px) {
+    .testimonial {
+      margin-bottom: 0;
+      margin-top: -200px;
+      width: 400px;
+      position: relative;
+    }
 
 .testimonial__pic{
     float: left;
@@ -93,3 +173,24 @@ header{
     padding: 30px;
     margin-top: -15px;
 }
+
+/* @media (min-width: 768px){
+    .flex-container{
+        display: flex;
+        height: 350px;
+        justify-content: space-between;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+    header{
+        margin-top: -1em;
+        text-align: start;
+        flex: 30%;
+        margin-right: 4em;
+    }
+    .rates{
+        flex: 40%;
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+} */
